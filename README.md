@@ -92,6 +92,17 @@ Key values:
 5. Set `VITE_API_BASE_URL` to backend URL
 6. Update backend CORS to allow frontend domain
 
+### Railway Build/Start Commands
+
+Use these commands for backend deploy:
+
+```bash
+./mvnw -B -DskipTests clean package
+java -Dserver.port=$PORT -jar target/foodiesapi-0.0.1-SNAPSHOT.jar
+```
+
+Do not use `-Pproduction` unless you add a `production` Maven profile in `pom.xml`.
+
 ## Notes
 
 - If image upload fails, backend now returns AWS error details in the response.
